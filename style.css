@@ -5,104 +5,93 @@ font-family: 'Source Sans Pro', sans-serif; */
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 a {
   text-decoration: none;
-  color: white;
+}
+li {
+  list-style-type: none;
 }
 
 /* NavBar */
 nav {
-  height: 50px;
-  width: 100%;
-  background-color: #4d4d4d;
-  position: relative;
+  display: flex;
+  justify-content: space-between;
   padding: 0 10%;
+  width: 100%;
+  font-size: 1.5rem;
+  color: white;
+  font-family: "Playfair Display";
+  background-color: #4d4d4d;
   position: fixed;
   background: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
+  height: 80px;
 }
-
-nav .nav-header {
-  display: inline;
-}
-
-nav .nav-header .nav-title {
-  display: inline-block;
-  font-size: 22px;
-  color: #fff;
-  padding: 10px 10px 10px 10px;
-  font-family: "Playfair Display";
+nav .logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
   font-weight: bolder;
+  font-size: 2.5rem;
 }
-
-nav .nav-btn {
-  display: none;
-  padding: 0 8% 0 0;
+nav .navLinks {
+  list-style: none;
+  display: flex;
 }
-
-nav .nav-links {
-  display: inline;
-  float: right;
-  font-size: 18px;
-  font-family: "Source Sans Pro";
+nav .navLinks a {
+  color: white;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
 }
-
-nav .nav-links a {
-  display: inline-block;
-  padding: 13px 10px 13px 10px;
-  text-decoration: none;
-  color: #efefef;
-  font-weight: 600;
-}
-
-nav .nav-links a:hover {
+nav .navLinks a:hover {
   background-color: rgba(0, 0, 0, 0.3);
-}
-
-nav #nav-check {
-  display: none;
 }
 
 /* Hero */
 #hero {
   min-height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url(asset/heroBG.jpg);
+  background-image: url(asset/heroBG.jpg);
   background-position: top;
   background-size: center;
   color: white;
+  background-repeat: no-repeat;
+  background-color: #dddddd;
 }
 #hero .container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   align-items: flex-start;
-  padding: 0 10%;
+  justify-content: center;
+  padding: 200px 10% 0 10%;
+  gap: 240px;
 }
-
 #hero .container .text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 20px;
+  gap: 24px;
   width: 60%;
-  height: 90vh;
 }
 #hero .container .text h1 {
   font-family: "Playfair Display";
-  font-size: 3rem;
+  font-size: 5rem;
 }
 #hero .container .text p {
   font-family: "Source Sans Pro";
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 #hero .container .text button {
   font-family: "Source Sans Pro";
-  font-size: 1rem;
-  padding: 12px 32px;
+  font-size: 1.5rem;
+  padding: 18px 32px;
   color: white;
   background: linear-gradient(
     to right,
@@ -114,17 +103,331 @@ nav #nav-check {
   border: none;
   border-radius: 5px;
 }
-
+#hero .container .text button a {
+  color: white;
+}
 #hero .container .cardContainer {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  height: 10vh;
+  gap: 40px;
+  width: 100%;
 }
 
 #hero .container .cardContainer .card {
-  background-color: green;
+  background-color: white;
+  color: black;
+  display: flex;
+  width: 475px;
+  font-family: "Source Sans Pro";
+}
+#hero .container .cardContainer .card .cardImg {
+  flex: 3;
+}
+#hero .container .cardContainer .card .cardImg img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+#hero .container .cardContainer .card .cardText {
+  flex: 4;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#hero .container .cardContainer .card .cardText .cardTitle h1 {
+  font-size: 1.5rem;
+}
+#hero .container .cardContainer .card .cardText .cardTitle h2 {
+  font-size: 1rem;
+  color: grey;
+}
+#hero .container .cardContainer .card .cardText .cardBody p {
+  font-size: 1rem;
+  color: grey;
 }
 
+/* Coverage Area */
+#popular {
+  height: 100vh;
+  background-color: #dddddd;
+}
+
+#popular .container {
+  display: flex;
+  gap: 100px;
+  padding: 100px 10% 0 10%;
+}
+#popular .container .left {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 100px;
+}
+#popular .container .left .text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#popular .container .left .text h1 {
+  font-size: 4rem;
+  font-family: "Playfair Display";
+}
+#popular .container .left .text p {
+  font-size: 1.5rem;
+  font-family: "Source Sans Pro";
+}
+#popular .container .left img {
+  width: 100%;
+  object-fit: cover;
+}
+#popular .container .right {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 100px;
+}
+#popular .container .right .top {
+  background-image: url(asset/singapore.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex: 1;
+}
+#popular .container .right .bot {
+  background-image: url(asset/japan.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex: 1;
+}
+
+/* about Us */
+#about {
+  background-color: #dddddd;
+}
+
+#about .container {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  padding: 100px 10% 0 10%;
+}
+
+#about .container .header {
+  font-size: 3rem;
+  font-family: "Playfair Display";
+}
+
+#about .container .body {
+  display: flex;
+  gap: 30px;
+}
+#about .container .body .left {
+  flex: 2;
+  font-size: 2rem;
+  font-family: "Playfair Display";
+}
+#about .container .body .mid {
+  flex: 1;
+  font-size: 1.25rem;
+  font-family: "Source Sans Pro";
+}
+#about .container .body .right {
+  flex: 1;
+  font-size: 1.25rem;
+  font-family: "Source Sans Pro";
+}
+#about .container .cardContainer {
+  display: flex;
+  justify-content: space-between;
+}
+#about .container .cardContainer .card {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  height: 600px;
+}
+#about .container .cardContainer .card .cardImg {
+  height: 400px;
+  padding-top: 30px;
+}
+#about .container .cardContainer .card .person1 {
+  background-color: rgb(240, 240, 240);
+}
+#about .container .cardContainer .card .person2 {
+  background-color: rgb(255, 235, 235);
+}
+#about .container .cardContainer .card .person3 {
+  background-color: rgb(220, 255, 255);
+}
+#about .container .cardContainer .card .cardImg img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+#about .container .cardContainer .card .cardText {
+  text-align: center;
+  font-family: "Source Sans Pro";
+  background-color: white;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Contact Us */
+#contact {
+  min-height: 100vh;
+  background-color: #086464;
+}
+#contact .container {
+  padding: 100px 10%;
+  display: flex;
+  gap: 100px;
+  color: white;
+}
+#contact .container .left {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+#contact .container .left h1 {
+  font-size: 3rem;
+  font-family: "Playfair Display";
+  margin-bottom: 5px;
+}
+#contact .container .left p {
+  font-size: 1.5rem;
+  font-family: "Source Sans Pro";
+}
+#contact .container .left form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: "Source Sans Pro";
+  margin-top: 40px;
+}
+#contact .container .left form input {
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 0 10px;
+  font-size: 1rem;
+}
+#contact .container .left form label {
+  font-size: 1.25rem;
+}
+#contact .container .left form textarea {
+  height: 200px;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 10px;
+  font-family: "Source Sans Pro";
+  font-size: 1rem;
+  max-width: 711px;
+}
+#contact .container .left form .validation {
+  font-size: 1rem;
+  color: crimson;
+  font-weight: bold;
+}
+#contact .container .left form .name {
+  display: flex;
+  flex: row;
+  gap: 20px;
+}
+#contact .container .left form .name .firstName {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 5px;
+}
+#contact .container .left form .name .lastName {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 5px;
+}
+#contact .container .left form .email {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+#contact .container .left form .phone {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+#contact .container .left form .message {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+#contact .container .left form button {
+  border-radius: 5px;
+  height: 40px;
+  font-family: "Source Sans Pro";
+  font-size: 1rem;
+  border: 1px solid #064e4e;
+  background-color: #064e4e;
+  color: white;
+  transition: 0.3s;
+}
+#contact .container .left form button:hover {
+  color: #086464;
+  background-color: white;
+  border: 1px solid #064e4e;
+  transition: 0.3s;
+  font-weight: 600;
+}
+#contact .container .right {
+  width: 50%;
+}
+#contact .container .right img {
+  width: 100%;
+}
+
+/* footer */
+#footer {
+  background-color: white;
+  color: black;
+  font-family: "Source Sans Pro";
+}
+#footer .container {
+  display: flex;
+  justify-content: space-between;
+  padding: 100px 10%;
+}
+#footer .container .footerContent {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+}
+#footer .container .footerContent h1 {
+  font-size: 3rem;
+  font-weight: bolder;
+}
+#footer .container .footerContent h2 {
+  font-size: 1.5rem;
+}
+#footer .container .footerContent p {
+  font-display: 1rem;
+  color: black;
+}
+#footer .container .footerContent ul li {
+  margin-top: 20px;
+}
+#footer .container .footerContent a {
+  color: black;
+  text-decoration: none;
+}
+#footer .container .footerContent a:hover {
+  color: #086464;
+}
+
+/* Media Query */
 @media (max-width: 768px) {
   nav .nav-btn {
     display: inline-block;
