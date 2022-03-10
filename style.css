@@ -1,0 +1,172 @@
+/* font-family: 'Playfair Display', serif;
+font-family: 'Source Sans Pro', sans-serif; */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* NavBar */
+nav {
+  height: 50px;
+  width: 100%;
+  background-color: #4d4d4d;
+  position: relative;
+  padding: 0 10%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+nav .nav-header {
+  display: inline;
+}
+
+nav .nav-header .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+  font-family: "Playfair Display";
+  font-weight: bolder;
+}
+
+nav .nav-btn {
+  display: none;
+  padding: 0 8% 0 0;
+}
+
+nav .nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+  font-family: "Source Sans Pro";
+}
+
+nav .nav-links a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #efefef;
+  font-weight: 600;
+}
+
+nav .nav-links a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+nav #nav-check {
+  display: none;
+}
+
+/* Hero */
+#hero {
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(asset/heroBG.jpg);
+  background-position: top;
+  background-size: center;
+  color: white;
+}
+#hero .container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: flex-start;
+  padding: 0 10%;
+}
+
+#hero .container .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  width: 60%;
+  height: 90vh;
+}
+#hero .container .text h1 {
+  font-family: "Playfair Display";
+  font-size: 3rem;
+}
+#hero .container .text p {
+  font-family: "Source Sans Pro";
+  font-size: 1rem;
+}
+#hero .container .text button {
+  font-family: "Source Sans Pro";
+  font-size: 1rem;
+  padding: 12px 32px;
+  color: white;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.3),
+    rgba(255, 255, 255, 0.3)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 5px;
+}
+
+#hero .container .cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  height: 10vh;
+}
+
+#hero .container .cardContainer .card {
+  background-color: green;
+}
+
+@media (max-width: 768px) {
+  nav .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  nav .nav-btn label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  nav .nav-btn label:hover,
+  .nav #nav-check:checked ~ .nav-btn label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  nav .nav-btn label i {
+    color: white;
+    font-size: 24px;
+  }
+  nav .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+    padding: 0 10%;
+  }
+  nav .nav-links a {
+    display: block;
+    width: 100%;
+  }
+  nav #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  nav #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
